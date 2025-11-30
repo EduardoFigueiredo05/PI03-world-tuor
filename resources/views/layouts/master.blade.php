@@ -3,14 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>World Tuor - @yield('title', 'Home')</title>
+    <title>World Tour - @yield('title', 'Home')</title>
     
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
     
@@ -18,11 +16,8 @@
         @yield('content')
     </main>
 
-    {{-- <x-organisms.footer /> --}}
-
     <x-organisms.popup-profile />
 
     @stack('scripts')
-
 </body>
 </html>

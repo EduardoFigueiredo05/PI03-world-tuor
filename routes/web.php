@@ -7,6 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PacoteController; // Controller Público (Visualização)
 use App\Http\Controllers\ReservaController; // Controller de Reservas
+use App\Http\Controllers\Admin\ReservaController as AdminReservaController; // Controller de Reservas (Admin)
 
 // Importação dos Controllers de Admin (Usando Alias para não confundir nomes)
 use App\Http\Controllers\Admin\PacoteController as AdminPacoteController;
@@ -18,9 +19,8 @@ use App\Http\Controllers\Admin\UsuarioController as AdminUsuarioController;
 |--------------------------------------------------------------------------
 */
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
-
 // Visualização de Pacotes (Cliente não precisa logar para ver)
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/pacotes', [PacoteController::class, 'index'])->name('pacotes.index');
 Route::get('/pacotes/{id}', [PacoteController::class, 'show'])->name('pacotes.show');
 
