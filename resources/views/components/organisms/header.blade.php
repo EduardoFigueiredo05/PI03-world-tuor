@@ -10,7 +10,7 @@
 
         <nav class="home-nav">
             <a href="{{ route('home') }}" class="home-nav__link home-nav__link--active">Home</a>
-            <a href="{{ route('pacotes.index') }}" class="home-nav__link">Pacotes</a>
+            <a href="{{ route('site.pacotes') }}" class="home-nav__link">Pacotes</a>
             <a href="{{ route('meus-pacotes') }}" class="home-nav__link">Carrinho</a>
         </nav>
 

@@ -24,7 +24,7 @@
             </div>
         </div>
         <section class="cards-container-pacotes">
-            <a href="{{ route('site.continente.america-sul') }}" class="card-pacotes" data-continent="america-sul">
+            <a href="{{ route('continente.america-sul') }}" class="card-pacotes" data-continent="america-sul">
                 <div class="img-pacote">
                     <img src="https://images.unsplash.com/photo-1619546952812-520e98064a52?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="América do Sul">
                 </div>
@@ -32,7 +32,7 @@
                 <p>Aventura, paisagens naturais, história.</p>
             </a>
             
-            <a href="{{ route('site.continente.america-norte') }}" class="card-pacotes" data-continent="america-norte">
+            <a href="{{ route('continente.america-norte') }}" class="card-pacotes" data-continent="america-norte">
                 <div class="img-pacote">
                     <img src="https://images.unsplash.com/photo-1588272947922-21cbc34dc3a7?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="América do Norte">
                 </div>
@@ -42,7 +42,7 @@
         </section>
         
         <section class="cards-container-pacotes">
-            <a href="{{ route('site.continente.africa') }}" class="card-pacotes" data-continent="africa">
+            <a href="{{ route('continente.africa') }}" class="card-pacotes" data-continent="africa">
                 <div class="img-pacote">
                     <img src="https://images.unsplash.com/photo-1511185307590-3c29c11275ca?q=80&w=1467&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="África">
                 </div>
@@ -50,7 +50,7 @@
                 <p>Safári, história, natureza.</p>
             </a>
             
-            <a href="{{ route('site.continente.asia') }}" class="card-pacotes" data-continent="asia">
+            <a href="{{ route('continente.asia') }}" class="card-pacotes" data-continent="asia">
                 <div class="img-pacote">
                     <img src="https://images.unsplash.com/photo-1522547902298-51566e4fb383?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Ásia">
                 </div>
@@ -60,7 +60,7 @@
         </section>
         
         <section class="cards-container-pacotes">
-            <a href="{{ route('site.continente.europa') }}" class="card-pacotes" data-continent="europa">
+            <a href="{{ route('continente.europa') }}" class="card-pacotes" data-continent="europa">
                 <div class="img-pacote">
                     <img src="https://images.unsplash.com/photo-1603808523691-a2f471d415f0?q=80&w=1495&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Europa">
                 </div>
@@ -68,7 +68,7 @@
                 <p>Cidades históricas, museus, gastronomia.</p>
             </a>
             
-            <a href="{{ route('site.continente.oceania') }}" class="card-pacotes" data-continent="oceania">
+            <a href="{{ route('continente.oceania') }}" class="card-pacotes" data-continent="oceania">
                 <div class="img-pacote">
                     <img src="https://images.unsplash.com/photo-1656177303261-bb9dfbdd37ae?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Oceania">
                 </div>
@@ -282,28 +282,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-const btnOpen = document.getElementById('btn-open-profile');
-const popup = document.getElementById('popup-perfil');
 
-if (btnOpen && popup) {
-    btnOpen.addEventListener('click', function(e) {
-        e.preventDefault();
-        popup.style.display = 'flex';
-    });
-    
-    const btnClose = popup.querySelector('.btn-close');
-    if (btnClose) {
-        btnClose.addEventListener('click', function() {
-            popup.style.display = 'none';
-        });
-    }
-    
-    window.addEventListener('click', function(e) {
-        if (e.target === popup) {
-            popup.style.display = 'none';
-        }
-    });
-}
 
 </script>
 @endsection

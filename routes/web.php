@@ -95,12 +95,13 @@ require __DIR__ . '/auth.php';
 ------------------------*/
 Route::prefix('continente')->group(function () {
 
-    Route::view('/asia', 'site.continente-asia')->name('continente.asia');
-    Route::view('/africa', 'site.continente-africa')->name('continente.africa');
-    Route::view('/europa', 'site.continente-europa')->name('continente.europa');
-    Route::view('/america-sul', 'site.continente-america-sul')->name('continente.america-sul');
-    Route::view('/america-norte', 'site.continente-america-norte')->name('continente.america-norte');
-    Route::view('/oceania', 'site.continente-oceania')->name('continente.oceania');
+    // Ajuste: 'site.continente.asia' significa pasta site > pasta continente > arquivo asia
+    Route::view('/asia', 'site.continente.asia')->name('continente.asia');
+    Route::view('/africa', 'site.continente.africa')->name('continente.africa');
+    Route::view('/europa', 'site.continente.europa')->name('continente.europa');
+    Route::view('/america-sul', 'site.continente.america-sul')->name('continente.america-sul');
+    Route::view('/america-norte', 'site.continente.america-norte')->name('continente.america-norte');
+    Route::view('/oceania', 'site.continente.oceania')->name('continente.oceania');
 });
 
 /* -----------------------
@@ -131,9 +132,6 @@ Route::get('/teste', function () {
 Route::get('/', function () {
     return view('site.home');
 })->name('home');
-Route::get('/pacotes', function () {
-    return view('pacotes.index');
-})->name('pacotes.index');
 Route::get('/meus-pacotes', function () {
     return view('site.meus-pacotes'); // Ajuste o nome da view correta!
 })->name('meus-pacotes');

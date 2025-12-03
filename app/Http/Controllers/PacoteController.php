@@ -62,10 +62,11 @@ class PacoteController extends Controller
         return redirect()->route('pacotes.index')->with('success', 'Pacote atualizado com sucesso!');
 
     // EXCLUIR
-    public function destroy(Pacote $pacote)
-    {
+    public function destroy(Pacote $pacote){
+        
         $pacote->delete();
 
         return redirect()->route('pacotes.index')->with('success', 'Pacote removido com sucesso!');
     }
+}
 }
