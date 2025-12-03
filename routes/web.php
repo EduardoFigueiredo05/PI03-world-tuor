@@ -10,47 +10,130 @@ use App\Http\Controllers\Admin\UsuarioController;
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes
+| ROTAS PRINCIPAIS DO PROJETO (DIDÁTICAS)
 |--------------------------------------------------------------------------
-| Comentários em Português (didáticos):
-| - Aqui definimos as rotas acessíveis via navegador (HTTP).
-| - Rotas de autenticação extras ficam em routes/auth.php (padrão Laravel).
+| Aqui ficam as rotas principais do sistema Laravel.
+| Inclui:
+| - Página inicial
+| - Autenticação
+| - Rotas protegidas por login
+| - Área administrativa real (Controllers)
+| - Rotas adicionais do template HTML (views estáticas)
 */
 
-// Rota da página inicial (home pública)
+/*
+|--------------------------------------------------------------------------
+| Página Inicial (Home)
+|--------------------------------------------------------------------------
+*/
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-// Tela de registro customizada (se usada)
+/*
+|--------------------------------------------------------------------------
+| Registro (Página customizada)
+|--------------------------------------------------------------------------
+*/
 Route::get('/register', [AuthController::class, 'showRegister'])->name('register.show');
-// Exemplo de rota de post de registro (ajuste se já existir em auth.php)
-// Route::post('/register', [AuthController::class, 'register'])->name('register');
+// Route::post('/register', [AuthController::class, 'register'])->name('register'); // opcional
 
-// Grupo de rotas que exigem usuário autenticado
+/*
+|--------------------------------------------------------------------------
+| Área Protegida (Usuário precisa estar logado)
+|--------------------------------------------------------------------------
+*/
 Route::middleware(['auth'])->group(function () {
 
-    // Dashboard principal
+    // Dashboard do usuário autenticado
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
 
-    // Rotas de perfil (exemplo: ver/editar perfil do usuário)
+    // Rotas de perfil
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-// Rotas da área administrativa (apenas usuários admin)
+/*
+|--------------------------------------------------------------------------
+| Área Administrativa (Controllers de verdade)
+| - CRUD Pacotes
+| - CRUD Usuários
+|--------------------------------------------------------------------------
+*/
 Route::prefix('admin')
     ->name('admin.')
     ->middleware(['auth', 'admin'])
     ->group(function () {
 
-        // CRUD de pacotes
+        // CRUD de pacotes (real, usando Controller)
         Route::resource('pacotes', PacoteController::class);
 
-        // CRUD de usuários (ajuste os métodos permitidos conforme seu controller)
+        // CRUD de usuários (real, usando Controller)
         Route::resource('usuarios', UsuarioController::class);
     });
 
-// Rotas de autenticação padrão geradas pelo Breeze / Laravel (login, logout, etc)
+/*
+|--------------------------------------------------------------------------
+| Rotas de Autenticação do Laravel Breeze
+|--------------------------------------------------------------------------
+*/
 require __DIR__ . '/auth.php';
+
+
+/*
+|--------------------------------------------------------------------------
+| ROTAS DO TEMPLATE FRONT-END (HTML → BLADE)
+|--------------------------------------------------------------------------
+| Essas rotas apenas carregam páginas estáticas (layout Blade)
+| NÃO são controllers reais ainda.
+| São usadas para navegação das telas feitas no template do projeto.
+*/
+
+/* -----------------------
+|  Telas de Continentes
+------------------------*/
+Route::prefix('continente')->group(function () {
+
+    Route::view('/asia', 'site.continente-asia')->name('continente.asia');
+    Route::view('/africa', 'site.continente-africa')->name('continente.africa');
+    Route::view('/europa', 'site.continente-europa')->name('continente.europa');
+    Route::view('/america-sul', 'site.continente-america-sul')->name('continente.america-sul');
+    Route::view('/america-norte', 'site.continente-america-norte')->name('continente.america-norte');
+    Route::view('/oceania', 'site.continente-oceania')->name('continente.oceania');
+});
+
+/* -----------------------
+|  Telas de Pacotes (Front)
+------------------------*/
+Route::view('/pacotes', 'site.pacotes')->name('site.pacotes');
+Route::view('/pacote/{id}', 'site.pacote-click')->name('site.pacote.show');
+
+/* -----------------------
+|  Telas do Usuário (Front)
+------------------------*/
+Route::view('/meus-pacotes', 'site.meus-pacotes')->name('site.user.packages');
+Route::view('/perfil-popup', 'site.perfil-popup')->name('site.user.perfil');
+
+/* -----------------------
+|  Telas ADM do Template (não é a área admin real)
+------------------------*/
+Route::prefix('/template-admin')->group(function () {
+    Route::view('/dashboard', 'site.view_adm')->name('template.admin.dashboard');
+    Route::view('/add-pacote', 'site.adicionar_pacote')->name('template.admin.pacotes.create');
+    Route::view('/add-adm', 'site.adicionar_adm')->name('template.admin.usuarios.create');
+    Route::view('/add-categoria', 'site.adicionar_categoria')->name('template.admin.categorias.create');
+    Route::view('/editar-pacote', 'site.Editar_pacote')->name('template.admin.pacotes.edit');
+});
+Route::get('/teste', function () {
+    return view('site.teste');
+});
+Route::get('/', function () {
+    return view('site.home');
+})->name('home');
+Route::get('/pacotes', function () {
+    return view('pacotes.index');
+})->name('pacotes.index');
+Route::get('/meus-pacotes', function () {
+    return view('site.meus-pacotes'); // Ajuste o nome da view correta!
+})->name('meus-pacotes');
