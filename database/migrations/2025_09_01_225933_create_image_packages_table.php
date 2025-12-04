@@ -6,20 +6,15 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    
-    // executando a migrations.
-    
     public function up(): void
     {
+        // O NOME AQUI TEM QUE SER image_packages
         Schema::create('image_packages', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
     }
 
-    
-    // reverter a migrations.
-     
     public function down(): void
     {
         Schema::dropIfExists('image_packages');

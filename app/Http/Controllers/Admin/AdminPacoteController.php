@@ -14,7 +14,7 @@ use App\Http\Requests\PacoteRequest;
  * - Usa o model Pacote (em português) pois o banco já está estruturado assim.
  * - Usa PacoteRequest para centralizar regras de validação dos formulários.
  */
-class PacoteController extends Controller
+class AdminPacoteController extends Controller
 {
     public function __construct()
     {

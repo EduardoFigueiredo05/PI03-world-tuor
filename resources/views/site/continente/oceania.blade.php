@@ -47,7 +47,7 @@
                 <div class="img-pacote">
                     <img src="">
                 </div>
-                <a href="{{ route('continente.america-sul') }}"><h3>Nova Zelândia</h3></a>
+                <a href="{{ route('site.pacote.show', 1) }}"><h3>Nova Zelândia</h3></a>
                 <p>Montanhas majestosas, lagos cristalinos, cultura maori.</p>
 
             </div>

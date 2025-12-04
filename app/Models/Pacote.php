@@ -24,6 +24,9 @@ public function reservas(){
     return $this->hasMany(Reserva::class);
 }
 
+public function imagePackage(){
+    return $this->belongsTo(ImagePackage::class);
+}
 
 }
 

@@ -21,6 +21,7 @@ return new class extends Migration
         $table->decimal('preco',8,2); // Cria uma coluna 'preco' do tipo decimal, com até 8 dígitos e 2 casas decimais
         $table->date('data_inicio'); // Cria uma coluna 'data_inicio' do tipo data (DATE)
         $table->date('data_fim'); // Cria uma coluna 'data_fim' do tipo data (DATE)
+        $table->foreignId('image_package_id')->nullable()->constrained('image_packages');
         $table->timestamps(); // Cria as colunas 'created_at' e 'updated_at' para controle de datas de criação e atualização
     });
 }

@@ -37,7 +37,9 @@
                 <div class="img-pacote">
                     <img src="" >
                 </div>
+                <a href="{{route ('site.pacote.show', 1)}}">
                 <h3>Brasil</h3>
+                </a>
                 <p>Praias, paisagens naturais, gastronomia.</p>
             </div>
             

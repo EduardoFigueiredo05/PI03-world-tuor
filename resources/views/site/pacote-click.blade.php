@@ -22,7 +22,7 @@
         </div>
     </div>
     <div>
-        <h1 class="hero-title-secndary">Pacote Clicado</h1>
+        <h1 class="hero-title-secndary">{{$pacote->nome}}</h1>
     </div>
 </section>
 
@@ -31,7 +31,7 @@
 
     <p><i class="material-icons">star</i> / dias / noites</p>
 
-    <p>Breve descrição do pacote.</p>
+    <p>{{$pacote->descricao}}</p>
 
     <div class="section-pacote-infs-button">
         <button>Intinerário</button>
@@ -55,9 +55,9 @@
 <section class="reserve-now">
     <h2>Reserve agora sua viagem!</h2>
 
-    <P>R$: Valor em reais</P>
+    <P>R$ {{$pacote->preco}}</P>
 
-    <p>por pessoa</p>
+    <p>Por pessoa</p>
 
     <button type="button">Reservar agora</button>
 
