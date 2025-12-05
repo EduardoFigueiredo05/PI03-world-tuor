@@ -37,7 +37,9 @@
                 <div class="img-pacote">
                     <img src="" >
                 </div>
+                <a href="{{route('site.pacote.show'), 1}}">
                 <h3>Egito</h3>
+                </a>
                 <p>Pirâmides, história antiga, cultura fascinante.</p>
             </div>
             
@@ -45,7 +47,9 @@
                 <div class="img-pacote">
                     <img src="">
                 </div>
+                <a href="{{route('site.pacote.show'),2}}">
                 <h3>África do Sul</h3>
+                </a>
                 <p>Desertos, safáris, vida selvagem.</p>
             </div>
         </section>

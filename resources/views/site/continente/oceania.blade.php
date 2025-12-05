@@ -39,7 +39,9 @@
                 <div class="img-pacote">
                     <img src="" >
                 </div>
+                <a href="{{route('site.pacote.show',11)}}">
                 <h3>Austrália</h3>
+                </a>
                 <p>Praias deslumbrantes, vida selvagem, cidades vibrantes.</p>
             </div>
             
@@ -47,7 +49,9 @@
                 <div class="img-pacote">
                     <img src="">
                 </div>
-                <a href="{{ route('site.pacote.show', 1) }}"><h3>Nova Zelândia</h3></a>
+                <a href="{{ route('site.pacote.show', 12) }}">
+                    <h3>Nova Zelândia</h3>
+            </a>
                 <p>Montanhas majestosas, lagos cristalinos, cultura maori.</p>
 
             </div>

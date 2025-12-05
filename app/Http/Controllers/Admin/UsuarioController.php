@@ -8,11 +8,7 @@ use Illuminate\Http\Request;
 
 class UsuarioController extends Controller
 {
-    public function __construct()
-    {
-        // aplica middleware de autenticação + admin (ajuste os nomes conforme seu Kernel)
-        $this->middleware(['auth', 'admin']); 
-    }
+ 
 
     
     //isplay a listing of the users.

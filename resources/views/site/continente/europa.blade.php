@@ -37,8 +37,8 @@
                 <div class="img-pacote">
                     <img src="" >
                 </div>
-                <a href="{{route ('site.pacote.show', 2)}}">
-                <h3>Madri</h3>
+                <a href="{{route ('site.pacote.show', 9)}}">
+                <h3>Madrid</h3>
                 </a>
                 <p>Aventura, paisagens naturais, história.</p>
             </div>
@@ -47,7 +47,9 @@
                 <div class="img-pacote">
                     <img src="">
                 </div>
+                <a href="{{route('site.pacote.show',10)}}">
                 <h3>Paris</h3>
+                </a>
                 <p>Gastronomia, parques, museus.</p>
             </div>
         </section>

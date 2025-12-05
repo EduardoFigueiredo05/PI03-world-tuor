@@ -27,9 +27,10 @@
 </section>
 
 <section class="section-pacote-infs">
-    <p><i class="material-icons">star</i> Avaliações</p>
+    <p><i class="material-icons">star</i> Avaliações: 5/5</p>
 
-    <p><i class="material-icons">star</i> / dias / noites</p>
+    <p><i class="material-icons">star</i> Data de ida {{$pacote->data_inicio}}</p>
+    <p><i class="material-icons">star</i> Data de volta {{$pacote->data_fim}}</p>
 
     <p>{{$pacote->descricao}}</p>
 
@@ -39,16 +40,18 @@
         <button>Condições gerais</button>
     </div>
 
-    <section class="Intinerario">
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum laborum velit reiciendis quasi itaque, architecto repudiandae exercitationem deleniti iste labore eveniet ratione ab aspernatur accusamus. Ea odio culpa perferendis molestias.</p>
+    <section class="Intinerario active">
+        <h3>Roteiro da viagem</h3>
+        <p>{{$pacote->itinerario ?? 'Consulte os itens inclusos.'}}</p>
     </section>
 
     <section class="Oque-inclui">
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum laborum velit reiciendis quasi itaque, architecto repudiandae exercitationem deleniti iste labore eveniet ratione ab aspernatur accusamus. Ea odio culpa perferendis molestias.</p>
+        <p>{{$pacote->oque_inclui ?? 'Consulte as regras de cancelamento.'}}</p>
     </section>
 
     <section class="Condicoes-gerais">
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum laborum velit reiciendis quasi itaque, architecto repudiandae exercitationem deleniti iste labore eveniet ratione ab aspernatur accusamus. Ea odio culpa perferendis molestias.</p>
+        <h3>Regras e Condições</h3>
+        <p>{{$pacote->condicoes_gerais ?? 'Consulte as regras de cancelamento.'}}</p>
     </section>
 </section>
 

@@ -37,7 +37,9 @@
                 <div class="img-pacote">
                     <img src="" >
                 </div>
+                <a href="{{route('site.pacote.show',7)}}">
                 <h3>Japão</h3>
+                </a>
                 <p>Gastronomia, tecnologia, templos antigos.</p>
             </div>
             
@@ -45,7 +47,9 @@
                 <div class="img-pacote">
                     <img src="">
                 </div>
+                <a href="{{route('site.pacote.show',8)}}">
                 <h3>Turquia</h3>
+                </a>
                 <p>História rica, cultura vibrante, paisagens deslumbrantes.</p>
             </div>
         </section>

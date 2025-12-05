@@ -52,6 +52,9 @@ class PacoteSeeder extends Seeder
             'continente' => 'América do Sul',
             'pais' => 'Brasil',
             'descricao' => 'Desfrute das praias mais bonitas do mundo em Fernando de Noronha. Um roteiro exclusivo com mergulho, trilhas e gastronomia local.',
+            'itinerario' => 'Dia 1: Chegada e Check-in. Dia 2: Passeio de Barco. Dia 3: Trilha do Sancho.',
+            'oque_inclui' => 'Hospedagem, Café da Manhã, Transfer Aeroporto, Passeio de Barco.',
+            'condicoes_gerais' => 'Cancelamento gratuito até 7 dias antes. Obrigatório pagar taxa ambiental da ilha.',
             'preco' => 4500.00,
             'data_inicio' => Carbon::now()->addDays(30),
             'data_fim' => Carbon::now()->addDays(37),
@@ -88,6 +91,9 @@ class PacoteSeeder extends Seeder
             'continente' => 'Europa',
             'pais' => 'França',
             'descricao' => 'Paris, Londres e Roma em uma única viagem inesquecível. Conheça a história do velho continente.',
+            'itinerario' => 'Dia 1: Chegada e Check-in. Dia 2: Passeio de Barco. Dia 3: Trilha do Sancho.',
+            'oque_inclui' => 'Hospedagem, Café da Manhã, Transfer Aeroporto, Passeio de Barco.',
+            'condicoes_gerais' => 'Cancelamento gratuito até 7 dias antes. Obrigatório pagar taxa ambiental da ilha.',
             'preco' => 12000.00,
             'data_inicio' => Carbon::now()->addDays(60),
             'data_fim' => Carbon::now()->addDays(75),
@@ -95,5 +101,13 @@ class PacoteSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now(),
         ]);
+    
+    
+      
+    
+    
     }
+
+
+    
 }

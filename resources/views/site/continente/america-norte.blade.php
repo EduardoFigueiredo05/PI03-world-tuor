@@ -37,7 +37,9 @@
                 <div class="img-pacote">
                     <img src="" >
                 </div>
+                <a href="{{route('site.pacote.show',3)}}">
                 <h3>Estados Unidos</h3>
+                </a>
                 <p>Cidades vibrantes, parques nacionais, cultura diversificada.</p>
             </div>
             
@@ -45,7 +47,9 @@
                 <div class="img-pacote">
                     <img src="">
                 </div>
+                <a href="{{route('site.pacote.show',4)}}">
                 <h3>Canadá</h3>
+                </a>
                 <p>Natureza, lagos, vida selvagem.</p>
             </div>
         </section>

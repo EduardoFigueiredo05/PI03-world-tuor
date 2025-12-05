@@ -16,11 +16,7 @@ use App\Http\Requests\PacoteRequest;
  */
 class AdminPacoteController extends Controller
 {
-    public function __construct()
-    {
-        // Middleware garante que apenas usuários autenticados e admin acessem
-        $this->middleware(['auth', 'admin']);
-    }
+    
 
     /**
      * LISTAR PACOTES
